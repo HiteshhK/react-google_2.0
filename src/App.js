@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import { Footer, Navbar, Routes } from './components';
 
 export default function App() {
+  const [darkTheme, setDarkTheme] = useState(false);
+
   return (
-    <div>
-      <h1 className="text-1xl font-italic underline">Hello world!</h1>
+    <div className={darkTheme ? 'dark' : ''}>
+      <div className="bg-gray-500">
+        <Navbar />
+        <Routes />
+        <Footer />
+      </div>
     </div>
   );
 }
